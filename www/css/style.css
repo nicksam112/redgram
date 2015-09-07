@@ -1,1 +1,142 @@
 /* Empty. Add your own CSS if you like */
+.no-padding {
+    padding: 0px !important;
+}
+.no-margin {
+    margin: 2px !important;
+}
+
+.modal-center {
+
+    background-color: rgba(0,0,0,0.8);
+}
+
+.custom-modal-card {
+    height: 70%;
+    top: 15%;
+    bottom: 15%;
+
+    min-height: 0;
+
+    padding: 2% !important;
+    
+}
+
+.container-test {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.container-test-dummy {
+    margin-top: 100%;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+    transition: all linear 1s;
+    
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active, .animate-show.ng-hide-remove {
+    opacity: 0;
+}
+
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+
+.animate-card-left.ng-enter {
+    -webkit-animation: fadeInLeft 1s;
+    animation: fadeInLeft 1s;
+}
+.animate-card-right.ng-enter {
+    -webkit-animation: fadeInRight 1s;
+    animation: fadeInRight 1s;
+}
+
+.animate-card-left.ng-enter-stagger {
+  -webkit-animation-delay:200ms;
+  animation-delay:200ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.animate-card-right.ng-enter-stagger {
+  -webkit-animation-delay:200ms;
+  animation-delay:200ms;
+
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.icon-custom {
+    padding: 0px !important;
+    font-size: 20px;
+}
+
+.vote-button {
+    line-height: 2px !important;
+    min-height: 10px !important;
+    width: 20% !important;
+    display: block !important;
+}
+
+.custom-card {
+    padding: 0px !important;
+    padding-bottom: 5px !important;
+}
+
+.test-card {
+    /*min-height: 20% !important;*/
+    padding: 0px !important;
+    margin: 2px !important;
+}
+
+.small-font {
+    font-size: 9vw !important;
+}
+
+.vote-count-font {
+    font-size: 5vw !important;
+    overflow: hidden !important;
+    text-align: center !important;
+}
+
+.vote-left {
+    padding-left: 10% !important;
+}
+.vote-right {
+    padding-right: 10% !important;
+}
+
+button.font14:before {
+    font-size: 2px !important;
+}
+.lowHeight {
+    min-height: 10px !important;
+
+}
+
+img {
+    height: auto !important;
+    display:block;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important; 
+    padding: 5px;
+} 
