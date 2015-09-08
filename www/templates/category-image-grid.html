@@ -12,10 +12,11 @@
                     <img class="image-container" src="img/black-square.jpg">
                     <img class="image-container animate-show" ng-src="{{item.user.picture.medium}}" ng-click="openDetails($index)" imageonload>
                 </div>
-                
+                <div style="padding-top:3%; padding-bottom:10%">
                   <div class="icon ion-chevron-up small-font vote-left" style="float:left" ng-click="clickEvent()"></div>
                   <div class="icon ion-chevron-down small-font vote-right" style="float:right" ng-click="clickEvent()"></div>
                   <div class="vote-count-font">124</div>
+                </div>
 
               </div>
             </div>
@@ -39,11 +40,11 @@
                     <img class="image-container" src="img/black-square.jpg">
                     <img class="image-container animate-show" ng-src="{{item.user.picture.medium}}" ng-click="openDetails($index)" imageonload>
                 </div>
-
-                <div class="icon ion-chevron-up small-font vote-left" style="float:left" ng-click="clickEvent()"></div>
-                <div class="icon ion-chevron-down small-font vote-right" style="float:right" ng-click="clickEvent()"></div>
-                <div class="vote-count-font">103</div>
-                  
+                <div style="padding-top:3%; padding-bottom:10%">
+                  <div class="icon ion-chevron-up small-font vote-left" style="float:left" ng-click="clickEvent()"></div>
+                  <div class="icon ion-chevron-down small-font vote-right" style="float:right" ng-click="clickEvent()"></div>
+                  <div class="vote-count-font">103</div>
+                </div>
               </div>
             </div>
           </div>
@@ -72,7 +73,7 @@
             </div>
 
             <div style="color:#0000FF"> {{currentItem.user.email}}</div>
-            <div class="button-bar">
+            <div class="button-bar" style="padding-top:3%; padding-bottom:10%">
               <div class="button button-clear button-balanced icon ion-heart"></div>
               <div class="button button-clear icon ion-chevron-up" ng-click="clickEvent()"></div>
               <div class="button button-clear button-royal button-vote-count-font">103</div>

@@ -108,12 +108,13 @@
 }
 
 .small-font {
-    font-size: 9vw !important;
+    font-size: 5vw !important;
+    /*9vm/w*/
 }
 
 .vote-count-font {
     font-size: 5vw !important;
-    overflow: hidden !important;
+    
     text-align: center !important;
 }
 
