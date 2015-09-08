@@ -4,6 +4,43 @@ angular.module('app.services', [])
         function ($q, ParseConfiguration) {
 
         }])
+    .directive('imageonload', function() {
+        return {
+            restrict: 'A',
+            link: function($scope, $element, attrs) {
+                $element.addClass("ng-hide-remove");
+                $element.on('load', function() {
+                    $element.addClass("ng-hide-add");
+                });
+            }
+        };
+    })
+
+    .factory('PersonService', function($http){
+      var BASE_URL = "http://api.randomuser.me/";
+      var items = [];
+      
+      return {
+        GetFeed: function(){
+          return $http.get(BASE_URL+'?results=6').then(function(response){
+            items = response.data.results;
+            return items;
+          });
+        },
+        GetNewUsers: function(){
+          return $http.get(BASE_URL+'?results=6').then(function(response){
+            items = response.data.results;
+            return items;
+          });
+        },
+        GetOldUsers: function(){
+          return $http.get(BASE_URL+'?results=6').then(function(response){
+            items = response.data.results;
+            return items;
+          });
+        }
+      }
+    })
 
     .factory('$localStorage', ['$window', function ($window) {
         return {

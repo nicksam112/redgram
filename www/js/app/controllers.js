@@ -76,6 +76,25 @@ angular.module('app.controllers', [])
       }
     })
 
+    .controller('CategoryCtrl', function($state, $scope, $ionicLoading, PersonService) {
+        $scope.categories = [];
+
+        $scope.loadingIndicator = $ionicLoading.show({
+              content: 'Loading Data',
+              animation: 'fade-in',
+              showBackdrop: false,
+              maxWidth: 200,
+              showDelay: 500
+          });
+
+        PersonService.GetFeed().then(function(categories){
+            $ionicLoading.hide();
+            $scope.categories = categories;
+          });
+
+
+    })
+
     .controller('ListDetailCtrl', [
         '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
         function ($state, $scope, $stateParams, UserService) {

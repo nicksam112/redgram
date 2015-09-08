@@ -51,20 +51,33 @@
         
     </ion-content>
 
+    <ion-footer-bar class="bar-clear" style="padding:0px">
+        <div class="col col-50 col-offset-25">
+            <div class="button-bar">
+                <div class="button button-positive"> New</div>
+                <div class="button button-positive"> Hot</div>
+                <div class="button button-positive"> Top</div>
+            </div>
+        </div>
+    </ion-footer-bar>
+
     <script id="templates/modal.html" type="text/ng-template">
       <ion-modal-view ng-click="modal.hide()" class="modal-center">
       <ion-content>
         <div class="card">
           <div class="item item-body custom-modal-card">
-            
-            <img ng-src="{{currentItem.user.picture.large}}">
+            <div class="container-test">
+              <div class="container-test-dummy"></div>
+              <img class="image-container" ng-src="{{currentItem.user.picture.large}}">
+            </div>
+
             <div style="color:#0000FF"> {{currentItem.user.email}}</div>
             <div class="button-bar">
-              <div class="button button-large button-clear button-balanced icon ion-heart"></div>
-              <div class="button button-large button-clear icon ion-chevron-up" ng-click="clickEvent()"></div>
-              <div class="button button-large button-clear button-royal button-vote-count-font">103</div>
-              <div class="button button-large button-clear icon ion-chevron-down" ng-click="clickEvent()"></div>
-              <div class="button button-large button-clear button-calm icon ion-chatbox"></div>
+              <div class="button button-clear button-balanced icon ion-heart"></div>
+              <div class="button button-clear icon ion-chevron-up" ng-click="clickEvent()"></div>
+              <div class="button button-clear button-royal button-vote-count-font">103</div>
+              <div class="button button-clear icon ion-chevron-down" ng-click="clickEvent()"></div>
+              <div class="button button-clear button-calm icon ion-chatbox"></div>
             </div>
           </div>
         </div>
