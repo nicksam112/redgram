@@ -95,6 +95,10 @@ angular.module('app.controllers', [])
 
     })
 
+    .controller('AccountCtrl', function($state, $scope, $ionicLoading, PersonService) {
+
+    })
+
     .controller('ListDetailCtrl', [
         '$state', '$scope', '$stateParams', 'UserService',   // <-- controller dependencies
         function ($state, $scope, $stateParams, UserService) {
@@ -122,7 +126,7 @@ angular.module('app.controllers', [])
 
 
         }])
-    .controller('AccountCtrl', [
+    .controller('TestAccountCtrl', [
         '$state', '$scope', 'UserService',   // <-- controller dependencies
         function ($state, $scope, UserService) {
 
