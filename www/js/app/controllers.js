@@ -96,7 +96,48 @@ angular.module('app.controllers', [])
     })
 
     .controller('AccountCtrl', function($state, $scope, $ionicLoading, PersonService) {
+        var img = document.getElementById('editImage');
 
+        var options = {
+            onError: function() {
+                alert('ERROR');
+            }
+        };
+
+        var vinImg = new VintageJS(img, options, null);
+
+        $scope.Button1 = function(){
+            
+            var effect = {
+                vignette: 0.6,
+                sepia: true
+            };
+
+            vinImg.vintage(effect);
+            console.log(JSON.stringify(effect));
+        }
+        $scope.Button2 = function(){
+            
+            var effect = {
+                vignette: 0.9,
+                noise: 20
+            };
+
+            vinImg.vintage(effect);
+        }
+        $scope.Button3 = function(){
+            
+            var effect = {
+                vignette: 0.8,
+                screen: {r:120, g:120, b:0, a:0.7}
+            };
+
+            vinImg.vintage(effect);
+        }
+    })
+
+    .controller('ImageEditCtrl', function($state, $scope, $ionicLoading, PersonService) {
+        
     })
 
     .controller('ListDetailCtrl', [

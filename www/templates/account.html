@@ -5,20 +5,27 @@
         </button>
     </ion-nav-buttons>
     <ion-content>
-        <div class="row" style="padding:0px; margin:0px; height:20%">
-            <div class="col" style="background-color:rgb(232,193,217); height:100px">
-                <div class="button button-assertive button-large button-clear button-block icon ion-camera"></div>
+        <img src="img/beach.jpg" id="editImage">
+        <div class="button-bar">
+            <div class="button icon ion-image" ng-click="Button1()"></div>
+            <div class="button icon ion-images" ng-click="Button2()"></div>
+            <div class="button icon ion-aperture" ng-click="Button3()"></div>
+        </div>
+
+        <div class="row row-center" style="padding:0px; margin:0px;">
+            <div class="col" style="background-color:rgb(232,193,217)">
+                <div class="button button-large button-assertive button-clear button-block icon ion-camera" style=""></div>
             </div>
-            <div class="col" style="background-color:rgb(232,228,193); height:100px">
-                <div class="button button-energized button-large button-clear button-block icon ion-ribbon-b"></div>
+            <div class="col" style="background-color:rgb(232,228,193)">
+                <div class="button button-large button-energized button-clear button-block icon ion-ribbon-b"></div>
             </div>
         </div>
-        <div class="row" style="padding:0px;margin:0px; height:20%">
-            <div class="col" style="background-color:rgb(193,232,209); height:100px">
-                <div class="button button-balanced button-large button-clear button-block icon ion-heart"></div>
+        <div class="row row-center" style="padding:0px;margin:0px">
+            <div class="col" style="background-color:rgb(193,232,209)">
+                <div class="button button-large button-balanced button-clear button-block icon ion-heart"></div>
             </div>
-            <div class="col" style="background-color:rgb(193,197,232); height:100px">
-                <div class="button button-positive button-large button-clear button-block icon ion-chatbox"></div>
+            <div class="col" style="background-color:rgb(193,197,232)">
+                <div class="button button-large button-positive button-clear button-block icon ion-chatbox"></div>
             </div>
         </div>
     </ion-content>

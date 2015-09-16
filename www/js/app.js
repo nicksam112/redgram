@@ -9,7 +9,9 @@ angular.module('starter',
         'app.controllers',
         'app.services',
         'user.controllers',
-        'user.services'
+        'user.services',
+        'ng-mfb',
+        'vintagejs'
     ]
 )
 /**

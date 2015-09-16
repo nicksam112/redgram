@@ -4,7 +4,7 @@
         <div class = "row">
           <div class = "col col-50">
 
-            <div class="list card no-margin no-padding animate-card-left" ng-repeat="item in items track by $index" ng-if="$even">
+            <div class="list card no-margin no-padding" ng-repeat="item in items track by $index" ng-if="$even">
 
               <div class="item item-body custom-card">
                 <div class="container-test">
@@ -33,7 +33,7 @@
               </div>
             </div>
 
-            <div class="list card no-margin no-padding animate-card-right" ng-repeat="item in items" ng-if="$odd">
+            <div class="list card no-margin no-padding" ng-repeat="item in items" ng-if="$odd">
               <div class="item item-body custom-card">
                 <div class="container-test">
                   <div class="container-test-dummy"></div>
@@ -52,15 +52,14 @@
         
     </ion-content>
 
-    <ion-footer-bar class="bar-clear" style="padding:0px">
-        <div class="col col-50 col-offset-25">
-            <div class="button-bar">
-                <div class="button button-positive"> New</div>
-                <div class="button button-positive"> Hot</div>
-                <div class="button button-positive"> Top</div>
-            </div>
+    <div class="col col-80 col-offset-10" style="padding:0px; position:fixed; bottom:20px; z-index:2">
+        <div class="button-bar">
+            <div class="button button-small button-positive"> New</div>
+            <div class="button button-small button-positive"> Hot</div>
+            <div class="button button-small button-positive"> Top</div>
         </div>
-    </ion-footer-bar>
+    </div>
+
 
     <script id="templates/modal.html" type="text/ng-template">
       <ion-modal-view ng-click="modal.hide()" class="modal-center">
@@ -73,12 +72,12 @@
             </div>
 
             <div style="color:#0000FF"> {{currentItem.user.email}}</div>
-            <div class="button-bar" style="padding-top:3%; padding-bottom:10%">
-              <div class="button button-clear button-balanced icon ion-heart"></div>
-              <div class="button button-clear icon ion-chevron-up" ng-click="clickEvent()"></div>
-              <div class="button button-clear button-royal button-vote-count-font">103</div>
-              <div class="button button-clear icon ion-chevron-down" ng-click="clickEvent()"></div>
-              <div class="button button-clear button-calm icon ion-chatbox"></div>
+            <div class="button-bar" style="padding-top:3%; padding-bottom:10%; max-width:100%">
+              <div class="button button-clear button-balanced icon ion-heart" style="max-width:15%; width:15%"></div>
+              <div class="button button-clear icon ion-chevron-up" style="max-width:15%; width:15%" ng-click="clickEvent()"></div>
+              <div class="button button-clear button-royal button-vote-count-font" style="min-width:20%; width:20%">103</div>
+              <div class="button button-clear icon ion-chevron-down" style="max-width:15%; width:15%" ng-click="clickEvent()"></div>
+              <div class="button button-clear button-calm icon ion-chatbox" style="max-width:15%; width:15%"></div>
             </div>
           </div>
         </div>
