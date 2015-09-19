@@ -21,6 +21,8 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <script src="js/ng-cordova.min.js"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="lib/ng-material-floating-button/src/mfb-directive.js"></script>
@@ -37,7 +39,7 @@
 
     <!-- action button -->
   </head>
-    <body ng-app="starter">
+    <body ng-app="starter" ng-controller="AppCtrl">
         <!--
           The nav bar that will be updated as we navigate between views.
         -->
@@ -55,8 +57,8 @@
         <nav mfb-menu position="br" effect="zoomin" label="close"
              active-icon="ion-close-round" resting-icon="ion-plus-round"
              toggling-method="click" style="padding-bottom:50px">
-          <button mfb-button icon="ion-camera" label="take pic"></button>
-          <button mfb-button icon="ion-upload" label="upload pic"></button>
+          <button mfb-button icon="ion-camera" label="take pic" ng-click="takePicture()"></button>
+          <button mfb-button icon="ion-upload" label="upload pic" ng-click="uploadPicture()"></button>
         </nav>
   </body>
 </html>

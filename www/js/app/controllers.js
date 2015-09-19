@@ -5,6 +5,72 @@
  */
 angular.module('app.controllers', [])
 
+    .controller('AppCtrl', function($state, $scope, $ionicLoading, $cordovaCamera, $localStorage) {
+        $scope.uploadPicture = function() {
+            var options = {
+                quality : 50,
+                destinationType : Camera.DestinationType.DATA_URL,
+                sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+                encodingType: Camera.EncodingType.JPEG,
+                popoverOptions: CameraPopoverOptions,
+                targetWidth: 500,
+                targetHeight: 500,
+                saveToPhotoAlbum: false
+            };
+            $cordovaCamera.getPicture(options).then(function(imageData) {
+                $localStorage.setObject("tempImage", imageData);
+                $scope.image = imageData;
+                $state.go('image-edit');
+                var img = document.getElementById('editImage');
+                img.src = imageData;
+            }, function(error) {
+                //alert("Camera Error");
+            });
+        }
+
+        $scope.takePicture = function() {
+            var options = {
+                quality : 50,
+                destinationType : Camera.DestinationType.FILE_URI,
+                sourceType : Camera.PictureSourceType.CAMERA,
+                encodingType: Camera.EncodingType.JPEG,
+                popoverOptions: CameraPopoverOptions,
+                targetWidth: 500,
+                targetHeight: 500,
+                saveToPhotoAlbum: false
+            };
+            $cordovaCamera.getPicture(options).then(function(imageData) {
+                //$localStorage.setObject("tempImage", imageData);
+                $scope.image = imageData;
+                $state.go('image-edit');
+                var img = document.getElementById('editImage');
+                img.src = imageData;
+            }, function(error) {
+                //alert("Camera Error");
+            });
+        }
+    })
+
+    .controller('ImageEditCtrl', function($state, $scope, $ionicLoading, $cordovaCamera, $localStorage, $timeout, $ionicPopup) {
+        //var img = document.getElementById('editImage');
+        //img.src = $scope.image;
+
+        alert('test');
+
+        console.log("HELLO");
+        /*
+        $localStorage.getObject("tempImage").then(function(temp){
+            alert('test');
+            img.src = temp;
+        });
+
+        $scope.Button1 = function(){
+            alert('test');
+            img.src = $localStorage.getObject("tempImage");
+        };*/
+
+    })
+
     .controller('CategoryImageGridCtrl', function($scope, $ionicLoading, $timeout, $ionicModal, PersonService) {
       $scope.items = [];
       $scope.newItems = [];

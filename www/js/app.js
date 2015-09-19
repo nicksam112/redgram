@@ -11,7 +11,8 @@ angular.module('starter',
         'user.controllers',
         'user.services',
         'ng-mfb',
-        'vintagejs'
+        'vintagejs',
+        'ngCordova'
     ]
 )
 /**
@@ -87,6 +88,12 @@ angular.module('starter',
                 url: '/account/:accountId',
                 templateUrl: 'templates/account.html',
                 controller: 'AccountCtrl'
+            })
+
+            .state('image-edit', {
+                url: '/image/edit',
+                templateUrl: 'templates/image-edit.html',
+                controller: 'ImageEditCtrl'
             })
 
             .state('settings', {
