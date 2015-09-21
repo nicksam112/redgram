@@ -12,7 +12,8 @@ angular.module('starter',
         'user.services',
         'ng-mfb',
         'vintagejs',
-        'ngCordova'
+        'ngCordova',
+        'ngImgCrop'
     ]
 )
 /**

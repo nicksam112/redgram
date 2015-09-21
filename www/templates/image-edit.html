@@ -1,16 +1,39 @@
-<ion-view title="Categories">
-    <ion-nav-buttons side="right">
-        <button class="button button-clear button-white icon icon-left ion-log-out" ng-click="doSomeAction()">
+<ion-view title="Image Edit">
+    <ion-nav-buttons side="left">
+        <button class="button button-clear button-white icon icon-left ion-close-round" ng-click="doSomeAction()">
             
         </button>
     </ion-nav-buttons>
-    <ion-content>
-        <img src="{{image}}" id="editImage">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-white icon icon-left ion-checkmark-round" ng-click="doSomeAction()">
+            
+        </button>
+    </ion-nav-buttons>
+    <ion-content> 
+        <div class="cropArea">
+            <img-crop image="image" result-image="croppedImage"></img-crop>
+        </div>
+        <div>Cropped Image:</div>
+        <div><img ng-src="{{croppedImage}}" /></div>
         <div class="button-bar">
             <div class="button icon ion-image" ng-click="Button1()"></div>
             <div class="button icon ion-images" ng-click="Button2()"></div>
             <div class="button icon ion-aperture" ng-click="Button3()"></div>
         </div>
-
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Caption</span>
+            <input type="text" placeholder="Caption">
+        </label>
+        <!--
+        <div class="list">
+            <div class="item range range-positive">
+                <i style="width:30%">Vignette</i>
+                <input type="range" name="vignette" ng-model="data.vignette">   
+            </div>
+            <div class="item range range-positive">
+                <i style="width:30%">Contrast</i>
+                <input type="range" name="contrast" ng-model="data.contrast">   
+            </div>
+        </div> -->
     </ion-content>
 </ion-view>

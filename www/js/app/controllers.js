@@ -6,10 +6,11 @@
 angular.module('app.controllers', [])
 
     .controller('AppCtrl', function($state, $scope, $ionicLoading, $cordovaCamera, $localStorage) {
+        $scope.image='';
         $scope.uploadPicture = function() {
             var options = {
                 quality : 50,
-                destinationType : Camera.DestinationType.DATA_URL,
+                destinationType : Camera.DestinationType.FILE_URI,
                 sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
                 encodingType: Camera.EncodingType.JPEG,
                 popoverOptions: CameraPopoverOptions,
@@ -18,11 +19,8 @@ angular.module('app.controllers', [])
                 saveToPhotoAlbum: false
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
-                $localStorage.setObject("tempImage", imageData);
                 $scope.image = imageData;
                 $state.go('image-edit');
-                var img = document.getElementById('editImage');
-                img.src = imageData;
             }, function(error) {
                 //alert("Camera Error");
             });
@@ -40,11 +38,8 @@ angular.module('app.controllers', [])
                 saveToPhotoAlbum: false
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
-                //$localStorage.setObject("tempImage", imageData);
                 $scope.image = imageData;
                 $state.go('image-edit');
-                var img = document.getElementById('editImage');
-                img.src = imageData;
             }, function(error) {
                 //alert("Camera Error");
             });
@@ -52,23 +47,52 @@ angular.module('app.controllers', [])
     })
 
     .controller('ImageEditCtrl', function($state, $scope, $ionicLoading, $cordovaCamera, $localStorage, $timeout, $ionicPopup) {
-        //var img = document.getElementById('editImage');
-        //img.src = $scope.image;
+        $scope.croppedImage='';
 
-        alert('test');
+        //$scope.$apply(function($scope){
+            //$scope.croppedImage = "http://placehold.it/50x150"
+            
+        //}); 
 
-        console.log("HELLO");
         /*
-        $localStorage.getObject("tempImage").then(function(temp){
-            alert('test');
-            img.src = temp;
-        });
+        var img = '';//document.getElementById('editImg');
+
+        var options = {
+            onError: function() {
+                alert('ERROR');
+            }
+        };
+
+        var vinImg = new VintageJS(img, options, null);
 
         $scope.Button1 = function(){
-            alert('test');
-            img.src = $localStorage.getObject("tempImage");
-        };*/
+            
+            var effect = {
+                vignette: 0.6,
+                sepia: true
+            };
 
+            vinImg.vintage(effect);
+            console.log(JSON.stringify(effect));
+        }
+        $scope.Button2 = function(){
+            
+            var effect = {
+                vignette: 0.9,
+                noise: 20
+            };
+
+            vinImg.vintage(effect);
+        }
+        $scope.Button3 = function(){
+            
+            var effect = {
+                vignette: 0.8,
+                screen: {r:120, g:120, b:0, a:0.7}
+            };
+
+            vinImg.vintage(effect);
+        }*/
     })
 
     .controller('CategoryImageGridCtrl', function($scope, $ionicLoading, $timeout, $ionicModal, PersonService) {
@@ -162,7 +186,9 @@ angular.module('app.controllers', [])
     })
 
     .controller('AccountCtrl', function($state, $scope, $ionicLoading, PersonService) {
-        var img = document.getElementById('editImage');
+        //var img = document.getElementById('editImage');
+        /*
+        $scope.croppedImage='';
 
         var options = {
             onError: function() {
@@ -199,11 +225,7 @@ angular.module('app.controllers', [])
             };
 
             vinImg.vintage(effect);
-        }
-    })
-
-    .controller('ImageEditCtrl', function($state, $scope, $ionicLoading, PersonService) {
-        
+        }*/
     })
 
     .controller('ListDetailCtrl', [

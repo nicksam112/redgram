@@ -5,7 +5,10 @@
         </button>
     </ion-nav-buttons>
     <ion-content>
-        <img src="img/beach.jpg" id="editImage">
+        <!-- <img src="img/beach.jpg" id="editImage"> -->
+        <img-crop image="editImage" result-image="croppedImage"></img-crop>
+        <div>Cropped Image:</div>
+        <div><img ng-src="{{croppedImage}}" /></div>
         <div class="button-bar">
             <div class="button icon ion-image" ng-click="Button1()"></div>
             <div class="button icon ion-images" ng-click="Button2()"></div>
