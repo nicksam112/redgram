@@ -91,6 +91,12 @@ angular.module('starter',
                 controller: 'AccountCtrl'
             })
 
+            .state('image-crop', {
+                url: '/image/crop',
+                templateUrl: 'templates/image-crop.html',
+                controller: 'ImageCropCtrl'
+            })
+
             .state('image-edit', {
                 url: '/image/edit',
                 templateUrl: 'templates/image-edit.html',

@@ -6,21 +6,20 @@
 angular.module('app.controllers', [])
 
     .controller('AppCtrl', function($state, $scope, $ionicLoading, $cordovaCamera, $localStorage) {
-        $scope.image='';
+        //$scope.image='';
+        //$scope.croppedImage='';
         $scope.uploadPicture = function() {
             var options = {
                 quality : 50,
                 destinationType : Camera.DestinationType.FILE_URI,
                 sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
-                encodingType: Camera.EncodingType.JPEG,
+                encodingType: Camera.EncodingType.PNG,
                 popoverOptions: CameraPopoverOptions,
-                targetWidth: 500,
-                targetHeight: 500,
                 saveToPhotoAlbum: false
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
-                $scope.image = imageData;
-                $state.go('image-edit');
+                $scope.image2 = imageData;
+                $state.go('image-crop');
             }, function(error) {
                 //alert("Camera Error");
             });
@@ -31,31 +30,49 @@ angular.module('app.controllers', [])
                 quality : 50,
                 destinationType : Camera.DestinationType.FILE_URI,
                 sourceType : Camera.PictureSourceType.CAMERA,
-                encodingType: Camera.EncodingType.JPEG,
+                encodingType: Camera.EncodingType.PNG,
                 popoverOptions: CameraPopoverOptions,
-                targetWidth: 500,
-                targetHeight: 500,
                 saveToPhotoAlbum: false
             };
             $cordovaCamera.getPicture(options).then(function(imageData) {
-                $scope.image = imageData;
-                $state.go('image-edit');
+                $scope.image2 = imageData;
+                $state.go('image-crop');
             }, function(error) {
                 //alert("Camera Error");
             });
         }
     })
 
-    .controller('ImageEditCtrl', function($state, $scope, $ionicLoading, $cordovaCamera, $localStorage, $timeout, $ionicPopup) {
-        $scope.croppedImage='';
+    //
 
-        //$scope.$apply(function($scope){
-            //$scope.croppedImage = "http://placehold.it/50x150"
-            
-        //}); 
+    .controller('ImageCropCtrl', function($state, $scope, $rootScope, imageStore, $ionicLoading, $cordovaCamera, $localStorage, $timeout, $ionicPopup) {
+        $scope.image = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+        $scope.croppedImage = '';
+        alert('sup m8');
+        
+        $scope.beginLoad = function() {
+            alert('loadin');
+            $ionicLoading.show({
+              template:'Loading...'
+            });
+        };
 
-        /*
-        var img = '';//document.getElementById('editImg');
+        $scope.endLoad = function() {
+            $ionicLoading.hide();
+        };
+
+        $scope.setCrop = function() {
+            imageStore.store('cropImage', $scope.croppedImage);
+            //$scope.croppedImage = imageStore.get('cropImage');
+        }
+    })
+
+    .controller('ImageEditCtrl', function($state, $scope, $rootScope, imageStore, $ionicLoading, $cordovaCamera, $localStorage, $timeout, $ionicPopup) {
+        //$scope.croppedImage = imageStore.get('cropImage');
+        var img = document.getElementById('editImage');
+        //$scope.croppedImage = $rootScope.croppedImage; //imageStore.get('cropImage');
+        //img.src = $scope.croppedImage;
+        //alert(JSON.stringify($rootScope.croppedImage));
 
         var options = {
             onError: function() {
@@ -92,7 +109,7 @@ angular.module('app.controllers', [])
             };
 
             vinImg.vintage(effect);
-        }*/
+        }
     })
 
     .controller('CategoryImageGridCtrl', function($scope, $ionicLoading, $timeout, $ionicModal, PersonService) {

@@ -1,0 +1,32 @@
+Thing to do for the app
+1. Finish crop
+	Put on seperate page
+	Black background black header/footer with white "ok"?
+	Save into scope and on to filters/caption/sharing
+2. Add filters (basically just copy instagram, 6 should be enough)
+3. Add Parse integration (the big one)
+	a. User login/registration
+		Look at parse example on github
+	b. Filters for commenting, voting, account page, submitting
+		Comments-just hide text box
+		Voting-pop up login/register modal
+		Account page-pop up login/register modal
+		Submitting-pop up login/register modal
+	c. Setup categories
+		Nature, Food, Shopping, Style, what else idk
+	d. Setup leaderboards 
+		Idk if necessary, could just sort by score
+	e. Add commenting
+		Just a list
+		username: comment
+		Textbox at bottom to comment
+		Load last....10 comments?
+	f. Add voting
+		Either +/-1 or add user to upvote/downvote list
+	g. Account page
+Optional
+1. Social sharing? (optional, shouldn't be too hard tbh)
+2. Badges
+3. Titles
+4. Local notifications for earning
+

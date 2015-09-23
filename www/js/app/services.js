@@ -58,6 +58,19 @@ angular.module('app.services', [])
             }
         }
     }])
+
+    .factory('imageStore', function($rootScope) {
+        var mem = {};
+
+        return {
+            store: function (key, value) {
+                mem[key] = value;
+            },
+            get: function (key) {
+                return mem[key];
+            }
+        };
+    })
     
     .factory('geoLocation', function ($localStorage) {
         return {
