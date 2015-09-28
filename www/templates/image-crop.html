@@ -14,7 +14,15 @@
     
     <ion-content class="cropArea"> 
         
-        <div>Cropped Image:</div>
-        <div><img ng-src="{{croppedImage}}" id="editImage"/></div>
+        <image-crop 
+          data-width="300"
+          data-height="300"
+          data-shape="square"
+          src="imageCrop"
+          data-result="croppedImage"
+          crop="initCrop"
+          padding="100"> 
+        </image-crop>
+
     </ion-content>
 </ion-view>

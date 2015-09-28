@@ -1,0 +1,35 @@
+{
+  "name": "angular-file-reader",
+  "main": "angular-file-reader.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/twhitbeck/angular-file-reader",
+  "authors": [
+    "Tim Whitbeck <twhitbeck@gmail.com>"
+  ],
+  "description": "Simple FileReader wrapper for AngularJS",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "filereader"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "68fd325cefa1cf2f5b3a19a27ae16b2520889434"
+  },
+  "_source": "git://github.com/twhitbeck/angular-file-reader.git",
+  "_target": "~0.0.1",
+  "_originalSource": "angular-file-reader"
+}

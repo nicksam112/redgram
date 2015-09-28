@@ -13,7 +13,8 @@ angular.module('starter',
         'ng-mfb',
         'vintagejs',
         'ngCordova',
-        'ngImgCrop'
+        'jrCrop',
+        
     ]
 )
 /**
