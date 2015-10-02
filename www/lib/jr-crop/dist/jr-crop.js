@@ -80,7 +80,9 @@ function($ionicModal, $rootScope, $q) {
     /**
      * Init the image in a center position
      */
+
     initImage: function() {
+      /*
       if (this.options.height > this.imgHeight || this.options.width > this.imgWidth) {
         var imgAspectRatio = this.imgWidth / this.imgHeight;
         var selectAspectRatio = this.options.width / this.options.height;
@@ -90,7 +92,7 @@ function($ionicModal, $rootScope, $q) {
         } else {
           this.scale = this.last_scale = this.options.height / this.imgHeight;
         }
-      }
+      }*/
 
       var centerX = 0;//(this.imgWidth - this.options.width) / 2;
       var centerY = 0;//(this.imgHeight - this.options.height) / 2;
@@ -130,7 +132,11 @@ function($ionicModal, $rootScope, $q) {
         scaleMin = 1;//self.options.width / self.imgWidth;
       }
 
-      alert(scaleMin);
+      if(self.imgWidth > self.imgHeight) {
+        scaleMin = self.imgWidth/self.imgHeight;
+        scaleMax = scaleMin*2;
+        self.scale = scaleMin;
+      }
 
       function setPosWithinBoundaries() {
         calcMaxPos();
@@ -236,6 +242,14 @@ function($ionicModal, $rootScope, $q) {
       // Canvas size is original proportions but scaled down.
       canvas.width = this.options.width / this.scale;
       canvas.height = this.options.height / this.scale;
+      
+      if(this.imgWidth > this.imgHeight){
+        canvas.width = this.imgHeight / this.scale;
+        canvas.height = this.imgHeight / this.scale;
+      } else {
+        canvas.width = this.imgWidth / this.scale;
+        canvas.height = this.imgWidth / this.scale;
+      }
 
       // The full proportions 
       var currWidth = this.imgWidth * this.scale;
@@ -248,6 +262,9 @@ function($ionicModal, $rootScope, $q) {
 
       var sourceX = (this.posX - correctX) / this.scale;
       var sourceY = (this.posY - correctY) / this.scale;
+
+      alert(sourceX);
+      alert(sourceY);
 
       context.drawImage(this.imgFull, sourceX, sourceY);
 
